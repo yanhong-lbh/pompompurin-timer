@@ -1,5 +1,5 @@
 import { createTimer } from './timer.js';
-import { themes } from './themes.js?v=six-worlds';
+import { themes } from './themes.js?v=seamless';
 
 const timer = createTimer();
 const storageKey = 'pompom-time-v1';
