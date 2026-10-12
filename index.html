@@ -7,9 +7,8 @@
     <meta name="description" content="A cozy Pompompurin countdown timer. Pick a little happy place, set your time, and take life one tiny task at a time.">
     <title>Pompom Time · a cozy countdown</title>
     <link rel="icon" href="assets/favicon.svg?v=official" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="themes.css?v=six-worlds">
-    <link rel="stylesheet" href="giant.css?v=giant-purin">
+    <link rel="stylesheet" href="style.css?v=quiet-focus">
+    <link rel="stylesheet" href="themes.css?v=quiet-focus">
     <script type="module" src="app.js?v=six-worlds"></script>
   </head>
   <body>
@@ -34,20 +33,15 @@
       </header>
 
       <main>
-        <div class="intro">
-          <div><p class="eyebrow">A LITTLE FOCUS. A LOT OF POMPOMPURIN.</p><h1>Little tasks. <em>Giant Purin.</em></h1></div>
-          <p class="intro-note">More cuddles per countdown.<br>Your favorite friend, everywhere.</p>
-        </div>
+        <h1 class="sr-only">A little time with Pompompurin</h1>
 
         <section class="timer-card" aria-label="Countdown timer">
           <div class="timer-content">
             <div class="timer-face">
-            <div class="face-decoration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
             <div class="status-pill"><span class="status-dot"></span><span id="timer-status" role="status">ready when you are</span></div>
-            <label class="intention-label" for="intention">A LITTLE TIME FOR</label>
+            <label class="intention-label" for="intention">A LITTLE TIME FOR YOU</label>
             <input id="intention" class="intention" maxlength="70" placeholder="something lovely" aria-label="What are you making time for?" autocomplete="off">
             <div class="time-display" id="time-display" role="timer" aria-live="off" aria-label="25 minutes remaining">25<span>:</span>00</div>
-            <div class="world-progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
             </div>
             <div class="presets" aria-label="Timer duration">
               <button type="button" data-minutes="5" aria-pressed="false">5 min</button>
@@ -61,29 +55,18 @@
               <button type="button" class="reset-button" id="reset-button" aria-label="Reset timer" title="Reset (R)"><svg class="icon"><use href="#icon-reset"></use></svg></button>
             </div>
             <div class="progress-row"><div class="progress-track" role="progressbar" aria-label="Time elapsed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div><span id="progress-caption">one tiny task at a time</span></div>
+            <div class="completion" id="completion" hidden><span aria-hidden="true">✦</span><div><strong>A moment well spent.</strong><p>Stretch a little. You did a lovely job.</p></div><button type="button" id="dismiss-completion" aria-label="Dismiss completion message">×</button></div>
           </div>
           <div class="scene" aria-hidden="true">
-            <div class="scene-label"><span class="tiny-spark">✦</span><span id="scene-label">THE PUDDING CAFÉ</span><span class="tiny-spark">✦</span></div>
-            <div class="speech-bubble" id="scene-message">You've got this.<br>I'll be right here.</div>
+            <div class="scene-label" hidden><span class="tiny-spark">✦</span><span id="scene-label">THE PUDDING CAFÉ</span><span class="tiny-spark">✦</span></div>
+            <div class="speech-bubble" id="scene-message" hidden>You've got this.<br>I'll be right here.</div>
             <div class="scene-art-window"><img class="scene-art" id="scene-art" src="assets/pudding.svg?v=official" alt="" width="600" height="480"></div>
-            <img class="purin-sticker purin-sticker-one" src="assets/favicon.svg?v=official" alt="" width="560" height="560">
-            <img class="purin-sticker purin-sticker-two" src="assets/favicon.svg?v=official" alt="" width="560" height="560">
-            <img class="purin-sticker purin-sticker-three" src="assets/favicon.svg?v=official" alt="" width="560" height="560">
             <p class="scene-caption" id="scene-caption">a warm cup & a fresh start</p>
           </div>
-          <div class="completion" id="completion" hidden><span aria-hidden="true">✦</span><div><strong>A moment well spent.</strong><p>Stretch a little. You did a lovely job.</p></div><button type="button" id="dismiss-completion" aria-label="Dismiss completion message">×</button></div>
         </section>
 
-        <div class="purin-parade" aria-hidden="true">
-          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
-          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
-          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
-          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
-          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
-        </div>
-
         <section class="theme-section" aria-labelledby="theme-heading">
-          <div class="section-heading"><h2 id="theme-heading">Six new little worlds</h2><span>pick a Purin, find your happy place</span></div>
+          <div class="section-heading"><h2 id="theme-heading">Find your happy place</h2><span>a different mood, the same little friend</span></div>
           <div class="theme-list adventure-list" data-theme-collection="adventures" role="group" aria-label="New character themes"></div>
           <details class="classic-themes"><summary>Original cozy corners <span>4 classic themes</span></summary><div class="theme-list classic-list" data-theme-collection="classics" role="group" aria-label="Original themes"></div></details>
           <noscript><p>Please enable JavaScript to use the timer and choose a theme.</p></noscript>
