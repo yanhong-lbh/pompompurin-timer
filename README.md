@@ -28,7 +28,7 @@ For GitHub Pages, publish the `main` branch from `/ (root)` under **Settings →
 
 Unofficial fan project, not affiliated with or endorsed by Sanrio. Pompompurin and the character artwork © SANRIO CO., LTD.
 
-The six adventure themes display the original artwork from Sanrio without redrawing or recoloring the characters. The interface zooms and frames each image around Pompompurin. Images load directly from Sanrio, so these themes need an internet connection and depend on the source images remaining available.
+The six adventure themes display the original artwork from Sanrio without redrawing or recoloring the characters. Complete character groups sit directly against matching page colors. Tea and Onsen use a subtle fade at the artwork perimeter; Pillow and Studio trim only empty wallpaper margins around the full illustrations. Images load directly from Sanrio, so these themes need an internet connection and depend on the source images remaining available.
 
 | Theme | Original artwork | Official source page |
 | --- | --- | --- |
@@ -39,6 +39,6 @@ The six adventure themes display the original artwork from Sanrio without redraw
 | Pillow Fort | [November 2023 wallpaper](https://www.sanrio.co.jp/wp-content/uploads/2023/11/wallpaper202311-3.jpg) | [Team Purin wallpaper collection](https://www.sanrio.co.jp/specialsite/team-purin/wallpaper/) |
 | Purin’s Art Studio | [June 2023 wallpaper](https://www.sanrio.co.jp/wp-content/uploads/2023/06/wallpaper202306-4.jpg) | [Team Purin wallpaper collection](https://www.sanrio.co.jp/specialsite/team-purin/wallpaper/) |
 
-The four classic themes and favicon use Sanrio's [official Pompompurin portrait](https://www.sanrio.co.jp/wp-content/uploads/2022/06/list-pompompurin.png) from the [official character page](https://www.sanrio.co.jp/characters/pompompurin/). Each SVG embeds the original PNG bytes unchanged. The surrounding decorative scenes and timer interface were created for this fan project. This attribution does not imply a license or endorsement from Sanrio.
+The four classic themes and favicon use Sanrio's [official Pompompurin portrait](https://www.sanrio.co.jp/wp-content/uploads/2022/06/list-pompompurin.png) from the [official character page](https://www.sanrio.co.jp/characters/pompompurin/). Each SVG embeds the original PNG bytes unchanged. The classic themes use the transparent portrait directly, without a surrounding frame. The timer interface was created for this fan project. This attribution does not imply a license or endorsement from Sanrio.
 
 No analytics or server-side storage; preferences stay in your browser.
