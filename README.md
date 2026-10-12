@@ -8,6 +8,7 @@ A cozy Pompompurin fan countdown timer with ten illustrated worlds. Six adventur
 - Pause, resume, reset, optional completion chime, and fullscreen.
 - A deadline-based countdown that stays accurate when the tab is in the background. The timer, theme, sound preference, and optional intention are saved locally for refreshes.
 - Responsive layout, keyboard controls, accessible button labels, and reduced-motion support.
+- Oversized character scenes, official Purin stickers, and an art-first mobile layout.
 
 ## Use
 
@@ -27,7 +28,7 @@ For GitHub Pages, publish the `main` branch from `/ (root)` under **Settings →
 
 Unofficial fan project, not affiliated with or endorsed by Sanrio. Pompompurin and the character artwork © SANRIO CO., LTD.
 
-The six adventure themes display the original artwork from Sanrio without redrawing or recoloring the characters. Images load directly from Sanrio, so these themes need an internet connection and depend on the source images remaining available.
+The six adventure themes display the original artwork from Sanrio without redrawing or recoloring the characters. The interface zooms and frames each image around Pompompurin. Images load directly from Sanrio, so these themes need an internet connection and depend on the source images remaining available.
 
 | Theme | Original artwork | Official source page |
 | --- | --- | --- |
