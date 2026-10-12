@@ -9,6 +9,7 @@
     <link rel="icon" href="assets/favicon.svg?v=official" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="themes.css?v=six-worlds">
+    <link rel="stylesheet" href="giant.css?v=giant-purin">
     <script type="module" src="app.js?v=six-worlds"></script>
   </head>
   <body>
@@ -34,8 +35,8 @@
 
       <main>
         <div class="intro">
-          <div><p class="eyebrow">SLOW DOWN. SETTLE IN. START SMALL.</p><h1>Make time for <em>a little joy.</em></h1></div>
-          <p class="intro-note">Ten little worlds. One happy place.<br>Where shall we spend a moment?</p>
+          <div><p class="eyebrow">A LITTLE FOCUS. A LOT OF POMPOMPURIN.</p><h1>Little tasks. <em>Giant Purin.</em></h1></div>
+          <p class="intro-note">More cuddles per countdown.<br>Your favorite friend, everywhere.</p>
         </div>
 
         <section class="timer-card" aria-label="Countdown timer">
@@ -64,11 +65,22 @@
           <div class="scene" aria-hidden="true">
             <div class="scene-label"><span class="tiny-spark">✦</span><span id="scene-label">THE PUDDING CAFÉ</span><span class="tiny-spark">✦</span></div>
             <div class="speech-bubble" id="scene-message">You've got this.<br>I'll be right here.</div>
-            <img class="scene-art" id="scene-art" src="assets/pudding.svg?v=official" alt="" width="600" height="480">
+            <div class="scene-art-window"><img class="scene-art" id="scene-art" src="assets/pudding.svg?v=official" alt="" width="600" height="480"></div>
+            <img class="purin-sticker purin-sticker-one" src="assets/favicon.svg?v=official" alt="" width="560" height="560">
+            <img class="purin-sticker purin-sticker-two" src="assets/favicon.svg?v=official" alt="" width="560" height="560">
+            <img class="purin-sticker purin-sticker-three" src="assets/favicon.svg?v=official" alt="" width="560" height="560">
             <p class="scene-caption" id="scene-caption">a warm cup & a fresh start</p>
           </div>
           <div class="completion" id="completion" hidden><span aria-hidden="true">✦</span><div><strong>A moment well spent.</strong><p>Stretch a little. You did a lovely job.</p></div><button type="button" id="dismiss-completion" aria-label="Dismiss completion message">×</button></div>
         </section>
+
+        <div class="purin-parade" aria-hidden="true">
+          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
+          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
+          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
+          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
+          <img src="assets/favicon.svg?v=official" alt="" width="560" height="560">
+        </div>
 
         <section class="theme-section" aria-labelledby="theme-heading">
           <div class="section-heading"><h2 id="theme-heading">Six new little worlds</h2><span>pick a Purin, find your happy place</span></div>
