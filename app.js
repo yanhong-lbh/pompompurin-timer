@@ -1,15 +1,10 @@
 import { createTimer } from './timer.js';
+import { themes } from './themes.js?v=six-worlds';
 
-const themes = {
-  pudding: { title: 'THE PUDDING CAFÉ', caption: 'a warm cup & a fresh start', message: "You've got this.<br>I'll be right here.", color: '#fbf8ef' },
-  strawberry: { title: 'STRAWBERRY PICNIC', caption: 'life is sweet, take a little bite', message: 'Small steps.<br>Sweet little wins.', color: '#fff7f5' },
-  matcha: { title: 'THE MATCHA GARDEN', caption: 'a quiet moment to grow', message: 'Take a breath.<br>Grow at your pace.', color: '#f5f7ef' },
-  moonlight: { title: 'A MOONLIGHT NAP', caption: 'under the same sleepy stars', message: 'Easy does it.<br>Even stars rest.', color: '#27283e' },
-};
 const timer = createTimer();
 const storageKey = 'pompom-time-v1';
 const $ = (selector) => document.querySelector(selector);
-let theme = 'pudding';
+let theme = 'space';
 let sound = true;
 let audioContext;
 let previousStatus = 'idle';
@@ -35,12 +30,27 @@ function setTheme(nextTheme) {
   theme = nextTheme;
   const detail = themes[theme];
   document.documentElement.dataset.theme = theme;
+  document.documentElement.dataset.collection = detail.collection;
   $('meta[name="theme-color"]').content = detail.color;
-  $('#scene-art').src = `assets/${theme}.svg?v=official`;
+  $('#scene-art').src = detail.image;
+  $('#scene-art').alt = detail.alt;
   $('#scene-label').textContent = detail.title;
   $('#scene-caption').textContent = detail.caption;
   $('#scene-message').innerHTML = detail.message;
+  $('#art-source').href = detail.source;
   document.querySelectorAll('[data-theme-choice]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+}
+
+function renderThemeChoices() {
+  for (const [id, detail] of Object.entries(themes)) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'theme-option';
+    button.dataset.themeChoice = id;
+    button.setAttribute('aria-pressed', 'false');
+    button.innerHTML = `<span class="theme-preview ${id}-preview"><img src="${detail.image}" alt="" loading="lazy" decoding="async" width="96" height="96"></span><span class="theme-text"><strong>${detail.name}</strong><small>${detail.shortCaption}</small></span><span class="theme-check"><svg class="icon"><use href="#icon-check"></use></svg></span>`;
+    $(`[data-theme-collection="${detail.collection}"]`).append(button);
+  }
 }
 
 function renderSound() {
@@ -103,9 +113,16 @@ function render() {
   $('#start-button span').textContent = { idle: 'Start timer', running: 'Pause timer', paused: 'Resume timer', finished: 'Another little moment' }[state.status];
   $('#start-button use').setAttribute('href', state.status === 'running' ? '#icon-pause' : '#icon-play');
   const progress = Math.min(100, Math.max(0, 100 * (1 - state.remainingMs / state.durationMs)));
+  const card = $('.timer-card');
+  card.style.setProperty('--elapsed', progress / 100);
+  card.style.setProperty('--progress-percent', `${progress}%`);
+  card.style.setProperty('--progress-angle', `${progress * 3.6}deg`);
+  document.querySelectorAll('.world-progress i').forEach((marker, index) => {
+    marker.dataset.reached = String(progress >= (index + 1) * 100 / 6);
+  });
   $('#progress-fill').style.width = `${progress}%`;
   $('.progress-track').setAttribute('aria-valuenow', String(Math.round(progress)));
-  $('#progress-caption').textContent = state.status === 'finished' ? 'a moment well spent' : state.status === 'paused' ? 'a breather is part of the journey' : 'one tiny task at a time';
+  $('#progress-caption').textContent = state.status === 'finished' ? 'a moment well spent' : state.status === 'paused' ? 'a breather is part of the journey' : themes[theme].progressCaption;
   document.querySelectorAll('[data-minutes]').forEach((button) => button.setAttribute('aria-pressed', String(Number(button.dataset.minutes) * 60000 === state.durationMs)));
   if (state.status === 'finished' && previousStatus !== 'finished') {
     $('#completion').hidden = false;
@@ -149,7 +166,8 @@ $('#fullscreen-button').addEventListener('click', toggleFullscreen);
 if (!document.fullscreenEnabled) $('#fullscreen-button').hidden = true;
 document.addEventListener('fullscreenchange', () => $('#fullscreen-button').setAttribute('aria-label', document.fullscreenElement ? 'Exit fullscreen' : 'Enter fullscreen'));
 document.querySelectorAll('[data-minutes]').forEach((button) => button.addEventListener('click', () => resetTimer(Number(button.dataset.minutes) * 60000)));
-document.querySelectorAll('[data-theme-choice]').forEach((button) => button.addEventListener('click', () => { setTheme(button.dataset.themeChoice); persist(); }));
+renderThemeChoices();
+document.querySelectorAll('[data-theme-choice]').forEach((button) => button.addEventListener('click', () => { setTheme(button.dataset.themeChoice); render(); persist(); }));
 
 const dialog = $('#custom-dialog');
 $('#custom-button').addEventListener('click', () => {
