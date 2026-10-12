@@ -36,7 +36,7 @@ function setTheme(nextTheme) {
   const detail = themes[theme];
   document.documentElement.dataset.theme = theme;
   $('meta[name="theme-color"]').content = detail.color;
-  $('#scene-art').src = `assets/${theme}.svg`;
+  $('#scene-art').src = `assets/${theme}.svg?v=official`;
   $('#scene-label').textContent = detail.title;
   $('#scene-caption').textContent = detail.caption;
   $('#scene-message').innerHTML = detail.message;
