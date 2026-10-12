@@ -25,4 +25,8 @@ For GitHub Pages, publish the `main` branch from `/ (root)` under **Settings →
 
 ## About
 
-Unofficial fan project, not affiliated with or endorsed by Sanrio. Pompompurin is a Sanrio character. The artwork was created for this fan project. No analytics or server-side storage; preferences stay in your browser.
+Unofficial fan project, not affiliated with or endorsed by Sanrio. Pompompurin and the character artwork © SANRIO CO., LTD.
+
+The character in every theme, thumbnail, and favicon uses Sanrio's [official Pompompurin portrait](https://www.sanrio.co.jp/wp-content/uploads/2022/06/list-pompompurin.png) from the [official character page](https://www.sanrio.co.jp/characters/pompompurin/). Each SVG embeds the original PNG bytes unchanged. The surrounding decorative scenes and timer interface were created for this fan project. This attribution does not imply a license or endorsement from Sanrio.
+
+No analytics or server-side storage; preferences stay in your browser.
