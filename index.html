@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-theme="pudding">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbf7ed">
+    <meta name="description" content="A cozy Pompompurin countdown timer. Pick a little happy place, set your time, and take life one tiny task at a time.">
+    <title>Pompom Time · a cozy countdown</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="4"/></symbol>
+      <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 .7 6M4 4v6h6"/></symbol>
+      <symbol id="icon-sound" viewBox="0 0 24 24"><path d="m11 5-5 4H3v6h3l5 4zM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></symbol>
+      <symbol id="icon-muted" viewBox="0 0 24 24"><path d="m11 5-5 4H3v6h3l5 4zM16 9l6 6m0-6-6 6"/></symbol>
+      <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.5 5.5a5 5 0 0 0-7.1 0L12 6.9l-1.4-1.4a5 5 0 0 0-7.1 7.1L12 21l8.5-8.4a5 5 0 0 0 0-7.1Z"/></symbol>
+    </svg>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="./" aria-label="Pompom Time home"><img src="assets/favicon.svg" width="43" height="43" alt=""><span>pompom<span class="wordmark-light"> time</span><span class="wordmark-dot">.</span></span></a>
+        <span class="header-note">a little time, just for you <span aria-hidden="true">✳</span></span>
+        <div class="tools">
+          <button class="icon-button" id="sound-button" aria-label="Completion sound" aria-pressed="true" title="Completion sound on"><svg class="icon"><use href="#icon-sound"></use></svg></button>
+          <button class="icon-button" id="fullscreen-button" aria-label="Enter fullscreen" title="Fullscreen (F)"><svg class="icon"><use href="#icon-expand"></use></svg></button>
+        </div>
+      </header>
+
+      <main>
+        <div class="intro">
+          <div><p class="eyebrow">SLOW DOWN. SETTLE IN. START SMALL.</p><h1>Make time for <em>a little joy.</em></h1></div>
+          <p class="intro-note">Big dreams, tiny steps.<br>Your cozy little countdown is here.</p>
+        </div>
+
+        <section class="timer-card" aria-label="Countdown timer">
+          <div class="timer-content">
+            <div class="status-pill"><span class="status-dot"></span><span id="timer-status" role="status">ready when you are</span></div>
+            <label class="intention-label" for="intention">A LITTLE TIME FOR</label>
+            <input id="intention" class="intention" maxlength="70" placeholder="something lovely" aria-label="What are you making time for?" autocomplete="off">
+            <div class="time-display" id="time-display" role="timer" aria-live="off" aria-label="25 minutes remaining">25<span>:</span>00</div>
+            <div class="presets" aria-label="Timer duration">
+              <button type="button" data-minutes="5" aria-pressed="false">5 min</button>
+              <button type="button" data-minutes="15" aria-pressed="false">15 min</button>
+              <button type="button" data-minutes="25" aria-pressed="true">25 min</button>
+              <button type="button" data-minutes="50" aria-pressed="false">50 min</button>
+              <button type="button" id="custom-button" aria-haspopup="dialog">Custom <span aria-hidden="true">↗</span></button>
+            </div>
+            <div class="timer-actions">
+              <button type="button" class="primary-button" id="start-button"><svg class="icon"><use href="#icon-play"></use></svg><span>Start timer</span></button>
+              <button type="button" class="reset-button" id="reset-button" aria-label="Reset timer" title="Reset (R)"><svg class="icon"><use href="#icon-reset"></use></svg></button>
+            </div>
+            <div class="progress-row"><div class="progress-track" role="progressbar" aria-label="Time elapsed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div><span id="progress-caption">one tiny task at a time</span></div>
+          </div>
+          <div class="scene" aria-hidden="true">
+            <div class="scene-label"><span class="tiny-spark">✦</span><span id="scene-label">THE PUDDING CAFÉ</span><span class="tiny-spark">✦</span></div>
+            <div class="speech-bubble" id="scene-message">You've got this.<br>I'll be right here.</div>
+            <img class="scene-art" id="scene-art" src="assets/pudding.svg" alt="" width="600" height="480">
+            <p class="scene-caption" id="scene-caption">a warm cup & a fresh start</p>
+          </div>
+          <div class="completion" id="completion" hidden><span aria-hidden="true">✦</span><div><strong>A moment well spent.</strong><p>Stretch a little. You did a lovely job.</p></div><button type="button" id="dismiss-completion" aria-label="Dismiss completion message">×</button></div>
+        </section>
+
+        <section class="theme-section" aria-labelledby="theme-heading">
+          <div class="section-heading"><h2 id="theme-heading">Pick your happy place</h2><span>same little friend, a different little world</span></div>
+          <div class="theme-list" role="group" aria-label="Color theme">
+            <button class="theme-option" data-theme-choice="pudding" aria-pressed="true"><span class="theme-preview pudding-preview"><img src="assets/pudding.svg" alt="" width="96" height="77"></span><span class="theme-text"><strong>Pudding Café</strong><small>warm & buttery</small></span><span class="theme-check"><svg class="icon"><use href="#icon-check"></use></svg></span></button>
+            <button class="theme-option" data-theme-choice="strawberry" aria-pressed="false"><span class="theme-preview strawberry-preview"><img src="assets/strawberry.svg" alt="" width="96" height="77"></span><span class="theme-text"><strong>Strawberry Picnic</strong><small>a berry sweet break</small></span><span class="theme-check"><svg class="icon"><use href="#icon-check"></use></svg></span></button>
+            <button class="theme-option" data-theme-choice="matcha" aria-pressed="false"><span class="theme-preview matcha-preview"><img src="assets/matcha.svg" alt="" width="96" height="77"></span><span class="theme-text"><strong>Matcha Garden</strong><small>a breath of fresh air</small></span><span class="theme-check"><svg class="icon"><use href="#icon-check"></use></svg></span></button>
+            <button class="theme-option" data-theme-choice="moonlight" aria-pressed="false"><span class="theme-preview moonlight-preview"><img src="assets/moonlight.svg" alt="" width="96" height="77"></span><span class="theme-text"><strong>Moonlight Nap</strong><small>dream a little dream</small></span><span class="theme-check"><svg class="icon"><use href="#icon-check"></use></svg></span></button>
+          </div>
+        </section>
+      </main>
+      <footer><p>Made for little moments <svg class="icon"><use href="#icon-heart"></use></svg></p><p class="keyboard-hints"><kbd>space</kbd> start / pause <span>·</span> <kbd>R</kbd> reset</p><p class="fan-note">An unofficial Pompompurin fan project.</p></footer>
+    </div>
+
+    <dialog id="custom-dialog" aria-labelledby="custom-title">
+      <form id="custom-form">
+        <div class="dialog-heading"><span class="eyebrow">YOUR TIME, YOUR PACE</span><button type="button" class="close-button" id="close-dialog" aria-label="Close custom duration">×</button></div>
+        <h2 id="custom-title">A little time for you.</h2><p>How long would you like to settle in?</p>
+        <div class="duration-fields"><label>Hours<input id="hours" type="number" min="0" max="99" step="1" value="0" required inputmode="numeric"></label><span>:</span><label>Minutes<input id="minutes" type="number" min="0" max="59" step="1" value="25" required inputmode="numeric"></label><span>:</span><label>Seconds<input id="seconds" type="number" min="0" max="59" step="1" value="0" required inputmode="numeric"></label></div>
+        <p id="duration-error" role="alert"></p>
+        <button class="primary-button" type="submit">Set my timer <span aria-hidden="true">↗</span></button>
+      </form>
+    </dialog>
+    <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  </body>
+</html>
