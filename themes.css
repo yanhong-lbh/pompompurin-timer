@@ -1,6 +1,6 @@
 :root[data-theme="space"] { color-scheme:dark; --page:#003d52; --card:#0a3b4d; --ink:#fff5ce; --muted:#a6c8d0; --border:#315b69; --accent:#f4cb72; --accent-strong:#f6cc73; --scene:#033d4f; --soft:#174b5c; --button:#f4cb72; --button-text:#193e48; --glow:#3b9eaf; }
-:root[data-theme="tea"] { --page:#fffafc; --card:#fffdfa; --ink:#704651; --muted:#95656f; --border:#ead1d3; --accent:#eec3c9; --accent-strong:#ce8798; --scene:#f4dce0; --soft:#fae8e9; --button:#925365; --button-text:#fff9ee; --glow:#f2c5cb; }
-:root[data-theme="onsen"] { --page:#f9c36a; --card:#ffdc9d; --ink:#523b29; --muted:#694d34; --border:#ce9a52; --accent:#ead49d; --accent-strong:#c29858; --scene:#f5dfac; --soft:#f1b85f; --button:#6c5840; --button-text:#fff9e9; --glow:#eac88a; }
+:root[data-theme="tea"] { --page:#f7ead8; --card:#fff8ed; --ink:#713d35; --muted:#8a6555; --border:#e1cbb5; --accent:#e5c092; --accent-strong:#bc8667; --scene:#f7ead8; --soft:#f0dbc0; --button:#986251; --button-text:#fff9ef; --glow:#edd2ab; }
+:root[data-theme="onsen"] { --page:#fff; --card:#f4f8f4; --ink:#59383f; --muted:#687570; --border:#d9e4dd; --accent:#d3e6db; --accent-strong:#9ab8a4; --scene:#fff; --soft:#edf5ef; --button:#537569; --button-text:#fff; --glow:#d3e6db; }
 :root[data-theme="sushi"] { --page:#6dac8f; --card:#82b99f; --ink:#17372b; --muted:#20372d; --border:#568b73; --accent:#d8e5b9; --accent-strong:#84ac85; --scene:#70ac91; --soft:#80b89d; --button:#244d3b; --button-text:#fff9df; --glow:#b6d6b0; }
 :root[data-theme="pillow"] { --page:#d3d5ec; --card:#fcfaff; --ink:#574966; --muted:#685674; --border:#b9bbd4; --accent:#e2d1eb; --accent-strong:#ae8ec6; --scene:#d8d7eb; --soft:#eee5f6; --button:#806496; --button-text:#fff8ec; --glow:#d4c4ed; }
 :root[data-theme="studio"] { --page:#c7e8fb; --card:#fffef9; --ink:#4b5e68; --muted:#526873; --border:#a7cbdc; --accent:#bce3ee; --accent-strong:#74b6cc; --scene:#c6e9f7; --soft:#eaf4ee; --button:#48717b; --button-text:#fffcef; --glow:#d8edf0; }
@@ -10,10 +10,20 @@
 /* These wallpaper viewports trim empty margins while keeping the full illustrations. */
 :root[data-theme="pillow"] { --art-ratio:1.0536585366; --art-shift:-20.0520833333%; }
 :root[data-theme="studio"] { --art-ratio:1.3670886076; --art-shift:-26.8229166667%; }
-:root[data-theme="tea"] { --edge-fade:2%; }
-:root[data-theme="onsen"] { --edge-inset:2%; --edge-fade:4%; }
-[data-theme="tea"] .scene-art-window,
-[data-theme="onsen"] .scene-art-window {
-  mask-image:linear-gradient(to right,transparent var(--edge-inset,0%),#000 var(--edge-fade),#000 calc(100% - var(--edge-fade)),transparent calc(100% - var(--edge-inset,0%))),linear-gradient(to bottom,transparent var(--edge-inset,0%),#000 var(--edge-fade),#000 calc(100% - var(--edge-fade)),transparent calc(100% - var(--edge-inset,0%)));
-  mask-composite:intersect;
+:root[data-theme="tea"] { --art-ratio:1.02734375; --art-max-width:500px; }
+:root[data-theme="onsen"] { --art-ratio:1.7777777778; }
+
+/* Let the artwork use the quiet space beside the clock and the outer page margin. */
+[data-collection="adventures"] .scene {
+  width:calc(100% + min(11vw,140px));
+  margin-left:calc(-1 * min(7.5vw,96px));
+}
+[data-collection="adventures"] .scene-art-window { max-width:var(--art-max-width,none); }
+:root[data-theme="space"] { --art-ratio:0.8823529412; --art-shift:-7.3529411765%; }
+:root[data-theme="sushi"] { --art-ratio:1.2; --art-shift:-19.1993464052%; }
+@media(max-width:1100px) and (min-width:761px) {
+ [data-collection="adventures"] .scene { width:calc(100% + 50px); margin-left:-30px; }
+}
+@media(max-width:760px) {
+ [data-collection="adventures"] .scene { width:calc(100% + 32px); margin-left:-16px; }
 }
