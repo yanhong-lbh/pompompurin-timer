@@ -8,7 +8,7 @@ A cozy Pompompurin fan countdown timer with ten illustrated worlds. Six adventur
 - Pause, resume, reset, optional completion chime, and fullscreen.
 - A deadline-based countdown that stays accurate when the tab is in the background. The timer, theme, sound preference, and optional intention are saved locally for refreshes.
 - Responsive layout, keyboard controls, accessible button labels, and reduced-motion support.
-- Oversized character scenes, official Purin stickers, and an art-first mobile layout.
+- A large, easy-to-read countdown beside one official character scene, with timer controls first on mobile.
 
 ## Use
 
