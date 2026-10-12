@@ -28,13 +28,13 @@ For GitHub Pages, publish the `main` branch from `/ (root)` under **Settings →
 
 Unofficial fan project, not affiliated with or endorsed by Sanrio. Pompompurin and the character artwork © SANRIO CO., LTD.
 
-The six adventure themes display the original artwork from Sanrio without redrawing or recoloring the characters. Complete character groups sit directly against matching page colors. Tea and Onsen use a subtle fade at the artwork perimeter; Pillow and Studio trim only empty wallpaper margins around the full illustrations. Images load directly from Sanrio, so these themes need an internet connection and depend on the source images remaining available.
+The six adventure themes use original Sanrio character artwork without redrawing or recoloring it. Space, Sushi, Pillow, and Studio use the full-resolution originals (900 or 1080 pixels wide), with enlarged complete character groups against matching page colors. Their viewports remove surrounding margins without cutting the characters. Tea uses a transparent 526-pixel campaign PNG, capped at 500 CSS pixels; Onsen uses an 800-pixel original from the official Pompompurin account on a matching white page. Images load from their original Sanrio or collaboration hosts, so they need an internet connection and depend on those sources remaining available.
 
 | Theme | Original artwork | Official source page |
 | --- | --- | --- |
 | Space Mission | [Astronaut Pompompurin](https://pompompurin30th.sanrio.co.jp/img/gallery/gallery_13_large.jpg) | [30th anniversary gallery](https://pompompurin30th.sanrio.co.jp/) |
-| Tea Party | [Pompompurin’s tea party](https://pompompurin30th.sanrio.co.jp/img/gallery/gallery_06_large.jpg) | [30th anniversary gallery](https://pompompurin30th.sanrio.co.jp/) |
-| Onsen Retreat | [Pompompurin’s hot spring trip](https://pompompurin30th.sanrio.co.jp/img/gallery/gallery_20_large.jpg) | [30th anniversary gallery](https://pompompurin30th.sanrio.co.jp/) |
+| Tea Party | [Milk-tea Pompompurin](https://assets.niusnews.com/mall/milktea/pompompurin/pompompurin3.png) | [25th-anniversary Taiwan Milk Tea Festival collaboration](https://www.niusnews.com/milktea2021/pompompurin) |
+| Onsen Retreat | [Yuzu-bath Pompompurin and Muffin](https://pbs.twimg.com/media/GfRWT2fasAAaNJZ.jpg?name=orig) | [Official Pompompurin post](https://x.com/purin_sanrio/status/1870303225423016051) |
 | Sushi Break | [Pompompurin and friends as sushi](https://pompompurin30th.sanrio.co.jp/img/gallery/gallery_23_large.jpg) | [30th anniversary gallery](https://pompompurin30th.sanrio.co.jp/) |
 | Pillow Fort | [November 2023 wallpaper](https://www.sanrio.co.jp/wp-content/uploads/2023/11/wallpaper202311-3.jpg) | [Team Purin wallpaper collection](https://www.sanrio.co.jp/specialsite/team-purin/wallpaper/) |
 | Purin’s Art Studio | [June 2023 wallpaper](https://www.sanrio.co.jp/wp-content/uploads/2023/06/wallpaper202306-4.jpg) | [Team Purin wallpaper collection](https://www.sanrio.co.jp/specialsite/team-purin/wallpaper/) |
